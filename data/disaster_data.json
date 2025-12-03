@@ -1,0 +1,212 @@
+{
+  "Banggai": {
+    "color": "rgba(57,94,240,1.0)",
+    "disasters": [
+      {
+        "type": "Banjir",
+        "riskLevel": "Tinggi",
+        "description": "Daerah Banggai memiliki risiko banjir tinggi terutama di musim hujan. Area pesisir dan dataran rendah rentan terhadap banjir kiriman dari sungai-sungai utama."
+      },
+      {
+        "type": "Longsor",
+        "riskLevel": "Sedang",
+        "description": "Beberapa area pegunungan di Banggai memiliki potensi longsor, terutama pada daerah dengan kemiringan tinggi dan curah hujan ekstrem."
+      }
+    ]
+  },
+  "Banggai Kepulauan": {
+    "color": "rgba(217,112,71,1.0)",
+    "disasters": [
+      {
+        "type": "Banjir Pasang Air Laut",
+        "riskLevel": "Tinggi",
+        "description": "Sebagai daerah kepulauan, Banggai Kepulauan menghadapi risiko banjir pasang air laut yang signifikan, terutama di musim barat."
+      },
+      {
+        "type": "Badai Laut",
+        "riskLevel": "Tinggi",
+        "description": "Perairan di sekitar Banggai Kepulauan sering dilanda badai laut yang berpotensi mengganggu aktivitas nelayan dan transportasi laut."
+      }
+    ]
+  },
+  "Buol": {
+    "color": "rgba(185,102,156,1.0)",
+    "disasters": [
+      {
+        "type": "Banjir",
+        "riskLevel": "Tinggi",
+        "description": "Kabupaten Buol memiliki risiko banjir tinggi khususnya di area sekitar sungai Buol dan wilayah pesisir yang rendah."
+      },
+      {
+        "type": "Gempa Bumi",
+        "riskLevel": "Sedang",
+        "description": "Berada di zona seismik aktif, Buol memiliki potensi gempa bumi dengan intensitas sedang hingga tinggi."
+      },
+      {
+        "type": "Tsunami",
+        "riskLevel": "Sedang",
+        "description": "Daerah pesisir Buol berpotensi terkena tsunami akibat gempa bumi di Laut Sulawesi."
+      }
+    ]
+  },
+  "Donggala": {
+    "color": "rgba(70,160,190,1.0)",
+    "disasters": [
+      {
+        "type": "Gempa Bumi",
+        "riskLevel": "Sangat Tinggi",
+        "description": "Donggala terletak di zona seismik yang sangat aktif. Wilayah ini sering mengalami gempa bumi dengan magnitudo yang signifikan."
+      },
+      {
+        "type": "Tsunami",
+        "riskLevel": "Sangat Tinggi",
+        "description": "Pantai Donggala memiliki risiko tsunami yang sangat tinggi karena letak geografisnya yang dekat dengan zona subduksi."
+      },
+      {
+        "type": "Banjir",
+        "riskLevel": "Sedang",
+        "description": "Beberapa wilayah dataran rendah Donggala berpotensi mengalami banjir di musim penghujan."
+      }
+    ]
+  },
+  "Morowali": {
+    "color": "rgba(23,75,171,1.0)",
+    "disasters": [
+      {
+        "type": "Banjir",
+        "riskLevel": "Tinggi",
+        "description": "Morowali memiliki sungai-sungai besar dengan potensi banjir tinggi terutama di musim hujan. Wilayah dataran rendah sangat rentan."
+      },
+      {
+        "type": "Longsor",
+        "riskLevel": "Tinggi",
+        "description": "Daerah berbukit Morowali memiliki risiko longsor yang tinggi, terutama pada area dengan penebangan hutan yang ekstensif."
+      },
+      {
+        "type": "Kebakaran Hutan",
+        "riskLevel": "Sedang",
+        "description": "Luasnya hutan di Morowali mengakibatkan potensi kebakaran hutan, terutama di musim kemarau."
+      }
+    ]
+  },
+  "Palu": {
+    "color": "rgba(46,93,141,1.0)",
+    "disasters": [
+      {
+        "type": "Gempa Bumi",
+        "riskLevel": "Sangat Tinggi",
+        "description": "Palu sebagai ibukota provinsi berada di zona seismik yang sangat aktif. Kota ini telah mengalami gempa bumi dengan kerusakan signifikan."
+      },
+      {
+        "type": "Tsunami",
+        "riskLevel": "Sangat Tinggi",
+        "description": "Palu yang berlokasi di tepi pantai memiliki risiko tsunami yang sangat tinggi akibat aktivitas seismik laut."
+      },
+      {
+        "type": "Banjir",
+        "riskLevel": "Sedang",
+        "description": "Area perkotaan Palu menghadapi risiko banjir di beberapa titik, terutama di daerah yang padat penduduk dan bercekungan."
+      }
+    ]
+  },
+  "Parigi Moutong": {
+    "color": "rgba(43,182,168,1.0)",
+    "disasters": [
+      {
+        "type": "Banjir",
+        "riskLevel": "Tinggi",
+        "description": "Parigi Moutong memiliki risiko banjir tinggi di wilayah sekitar Sungai Parigi dan daerah dataran rendah lainnya."
+      },
+      {
+        "type": "Longsor",
+        "riskLevel": "Tinggi",
+        "description": "Daerah pegunungan Parigi Moutong memiliki potensi longsor yang tinggi, terutama pada musim dengan intensitas hujan tinggi."
+      },
+      {
+        "type": "Kekeringan",
+        "riskLevel": "Sedang",
+        "description": "Pada musim kemarau, beberapa wilayah Parigi Moutong menghadapi potensi kekeringan yang mempengaruhi pertanian."
+      }
+    ]
+  },
+  "Poso": {
+    "color": "rgba(34,136,95,1.0)",
+    "disasters": [
+      {
+        "type": "Banjir",
+        "riskLevel": "Tinggi",
+        "description": "Poso memiliki risiko banjir tinggi khususnya di daerah sekitar danau Poso dan sungai-sungai yang mengalir ke danau."
+      },
+      {
+        "type": "Longsor",
+        "riskLevel": "Tinggi",
+        "description": "Area bukit dan pegunungan Poso memiliki potensi longsor yang tinggi, terutama dengan topografi yang curam."
+      },
+      {
+        "type": "Gempa Bumi",
+        "riskLevel": "Sedang",
+        "description": "Poso berada di zona seismik dengan potensi gempa bumi sedang hingga tinggi."
+      }
+    ]
+  },
+  "Sigi": {
+    "color": "rgba(164,100,73,1.0)",
+    "disasters": [
+      {
+        "type": "Banjir",
+        "riskLevel": "Tinggi",
+        "description": "Sigi memiliki risiko banjir tinggi terutama di wilayah yang dilalui sungai-sungai utama dan area dataran rendah."
+      },
+      {
+        "type": "Longsor",
+        "riskLevel": "Tinggi",
+        "description": "Topografi berbukit Sigi menjadikan wilayah ini rawan terhadap bencana longsor, terutama pada musim penghujan."
+      },
+      {
+        "type": "Gempa Bumi",
+        "riskLevel": "Sedang",
+        "description": "Sigi terletak di area dengan aktivitas seismik sedang dan berpotensi mengalami gempa bumi."
+      }
+    ]
+  },
+  "Tojo Una-Una": {
+    "color": "rgba(45,107,133,1.0)",
+    "disasters": [
+      {
+        "type": "Banjir",
+        "riskLevel": "Tinggi",
+        "description": "Tojo Una-Una memiliki risiko banjir tinggi di wilayah dataran rendah yang dilalui sungai-sungai utama."
+      },
+      {
+        "type": "Longsor",
+        "riskLevel": "Sedang",
+        "description": "Beberapa area pegunungan Tojo Una-Una memiliki potensi longsor, terutama pada daerah dengan kemiringan tinggi."
+      },
+      {
+        "type": "Badai Laut",
+        "riskLevel": "Sedang",
+        "description": "Sebagai daerah pesisir, Tojo Una-Una menghadapi risiko badai laut yang dapat mengganggu aktivitas pelabuhan dan nelayan."
+      }
+    ]
+  },
+  "Toli-Toli": {
+    "color": "rgba(56,64,154,1.0)",
+    "disasters": [
+      {
+        "type": "Banjir Pasang Air Laut",
+        "riskLevel": "Tinggi",
+        "description": "Toli-Toli sebagai daerah pesisir memiliki risiko banjir pasang air laut, terutama di wilayah dataran rendah dan pesisir pantai."
+      },
+      {
+        "type": "Badai Laut",
+        "riskLevel": "Tinggi",
+        "description": "Perairan Toli-Toli sering dilanda badai laut yang dapat mengganggu transportasi laut dan kegiatan nelayan."
+      },
+      {
+        "type": "Gempa Bumi",
+        "riskLevel": "Sedang",
+        "description": "Toli-Toli berada di zona seismik dengan potensi gempa bumi sedang hingga tinggi."
+      }
+    ]
+  }
+}
