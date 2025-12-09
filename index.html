@@ -243,120 +243,35 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="data/SulawesiTengahgadm36_idn_shp__gadm36_idn_2shp_1.js"></script>
+        <script src="js/isidata.js"></script>
         <script>
         var map; // will be initialized when splash is closed
-        var disasterData = {
-  "Banggai": {
-    "color": "rgba(57,94,240,1.0)",
-    "disasters": [
-      {
-        "type": "Banjir",
-        "riskLevel": "Tinggi",
-        "description": "Daerah Banggai memiliki risiko banjir tinggi terutama di musim hujan. Area pesisir dan dataran rendah rentan terhadap banjir kiriman dari sungai-sungai utama."
-      }
-    ]
-  },
-  "Banggai Kepulauan": {
-    "color": "rgba(217,112,71,1.0)",
-    "disasters": [
-      {
-        "type": "Banjir Pasang Air Laut",
-        "riskLevel": "Tinggi",
-        "description": "Sebagai daerah kepulauan, Banggai Kepulauan menghadapi risiko banjir pasang air laut yang signifikan, terutama di musim barat."
-      }
-    ]
-  },
-  "Buol": {
-    "color": "rgba(185,102,156,1.0)",
-    "disasters": [
-      {
-        "type": "Banjir",
-        "riskLevel": "Tinggi",
-        "description": "Kabupaten Buol memiliki risiko banjir tinggi khususnya di area sekitar sungai Buol dan wilayah pesisir yang rendah."
-      }
-    ]
-  },
-  "Donggala": {
-    "color": "rgba(70,160,190,1.0)",
-    "disasters": [
-      {
-        "type": "Banjir",
-        "riskLevel": "Sedang",
-        "description": "Beberapa wilayah dataran rendah Donggala berpotensi mengalami banjir di musim penghujan."
-      }
-    ]
-  },
-  "Morowali": {
-    "color": "rgba(23,75,171,1.0)",
-    "disasters": [
-      {
-        "type": "Banjir",
-        "riskLevel": "Tinggi",
-        "description": "Morowali memiliki sungai-sungai besar dengan potensi banjir tinggi terutama di musim hujan. Wilayah dataran rendah sangat rentan."
-      }
-    ]
-  },
-  "Palu": {
-    "color": "rgba(46,93,141,1.0)",
-    "disasters": [
-      {
-        "type": "Banjir",
-        "riskLevel": "Sedang",
-        "description": "Area perkotaan Palu menghadapi risiko banjir di beberapa titik, terutama di daerah yang padat penduduk dan bercekungan."
-      }
-    ]
-  },
-  "Parigi Moutong": {
-    "color": "rgba(43,182,168,1.0)",
-    "disasters": [
-      {
-        "type": "Banjir",
-        "riskLevel": "Tinggi",
-        "description": "Parigi Moutong memiliki risiko banjir tinggi di wilayah sekitar Sungai Parigi dan daerah dataran rendah lainnya."
-      }
-    ]
-  },
-  "Poso": {
-    "color": "rgba(34,136,95,1.0)",
-    "disasters": [
-      {
-        "type": "Banjir",
-        "riskLevel": "Tinggi",
-        "description": "Poso memiliki risiko banjir tinggi khususnya di daerah sekitar danau Poso dan sungai-sungai yang mengalir ke danau."
-      }
-    ]
-  },
-  "Sigi": {
-    "color": "rgba(164,100,73,1.0)",
-    "disasters": [
-      {
-        "type": "Banjir",
-        "riskLevel": "Tinggi",
-        "description": "Sigi memiliki risiko banjir tinggi terutama di wilayah yang dilalui sungai-sungai utama dan area dataran rendah."
-      }
-    ]
-  },
-  "Tojo Una-Una": {
-    "color": "rgba(45,107,133,1.0)",
-    "disasters": [
-      {
-        "type": "Banjir",
-        "riskLevel": "Tinggi",
-        "description": "Tojo Una-Una memiliki risiko banjir tinggi di wilayah dataran rendah yang dilalui sungai-sungai utama."
-      }
-    ]
-  },
-  "Toli-Toli": {
-    "color": "rgba(56,64,154,1.0)",
-    "disasters": [
-      {
-        "type": "Banjir Pasang Air Laut",
-        "riskLevel": "Tinggi",
-        "description": "Toli-Toli sebagai daerah pesisir memiliki risiko banjir pasang air laut, terutama di wilayah dataran rendah dan pesisir pantai."
-      }
-    ]
-  }
-}; // akan diisi setelah fetch
+        // Data dimuat dari file isidata.js sebagai window.floodData
+        
+        // Converter: ubah format floodData dari isidata.js ke disasterData format
+        var disasterData = {};
+        if (window.floodData) {
+            console.log('📊 Data floodData tersedia, jumlah kabupaten:', Object.keys(window.floodData).length);
+            for (const region in window.floodData) {
+                const regionData = window.floodData[region];
+                const color = regionData.color || "rgba(100,100,100,1.0)";
+                
+                disasterData[region] = {
+                    color: color,
+                    disasters: [
+                        {
+                            type: regionData.tingkatRisiko ? regionData.tingkatRisiko + " Banjir" : "Banjir",
+                            riskLevel: regionData.tingkatRisiko || "Sedang",
+                            description: regionData.deskripsi || "Tidak ada deskripsi"
+                        }
+                    ]
+                };
+            }
+            console.log('✓ Data disasterData berhasil dibuat, jumlah:', Object.keys(disasterData).length);
+            console.log('Daftar kabupaten:', Object.keys(disasterData));
+        } else {
+            console.error('❌ window.floodData tidak ditemukan!');
+        }
 
         // Fungsi untuk membuat efek partikel
         function createParticles() {
@@ -734,19 +649,21 @@
         setBounds();
         document.getElementById('map-container').style.display = 'flex';
         
-        // Build layer list for sidebar
+        // Build layer list for sidebar - sinkron dengan isidata.js
         var layerData = {
             'Banggai': 'rgba(57,94,240,1.0)',
             'Banggai Kepulauan': 'rgba(217,112,71,1.0)',
+            'Banggai Laut': 'rgba(180,100,150,1.0)',
             'Buol': 'rgba(185,102,156,1.0)',
             'Donggala': 'rgba(70,160,190,1.0)',
+            'Kota Palu': 'rgba(46,93,141,1.0)',
             'Morowali': 'rgba(23,75,171,1.0)',
-            'Palu': 'rgba(46,93,141,1.0)',
+            'Morowali Utara': 'rgba(80,150,200,1.0)',
             'Parigi Moutong': 'rgba(43,182,168,1.0)',
             'Poso': 'rgba(34,136,95,1.0)',
             'Sigi': 'rgba(164,100,73,1.0)',
-            'Tojo Una-Una': 'rgba(45,107,133,1.0)',
-            'Toli-Toli': 'rgba(56,64,154,1.0)'
+            'Tojo Una Una': 'rgba(45,107,133,1.0)',
+            'Toli Toli': 'rgba(56,64,154,1.0)'
         };
         
         function buildLayerList() {
@@ -770,31 +687,120 @@
         }
         buildLayerList();
         
-        // Function to create disaster popup
+        // Function to create disaster popup dengan data lengkap dari isidata.js
         function showDisasterPopup(region) {
-            if (!disasterData[region]) {
-                console.log('Data untuk ' + region + ' belum tersedia');
+            // Helper untuk normalize nama region
+            function findFloodData(region) {
+                // Coba langsung
+                if (window.floodData[region]) {
+                    return window.floodData[region];
+                }
+                
+                // Coba dengan berbagai variasi nama
+                var variations = [
+                    region,
+                    'Kota ' + region,  // Palu -> Kota Palu
+                    region.replace(/\-/g, ' '),  // Tojo Una-Una -> Tojo Una Una
+                    region.replace(/ /g, '-'),  // Tojo Una Una -> Tojo Una-Una
+                ];
+                
+                for (var i = 0; i < variations.length; i++) {
+                    if (window.floodData[variations[i]]) {
+                        console.log('✓ Found data untuk: ' + variations[i]);
+                        return window.floodData[variations[i]];
+                    }
+                }
+                
+                // Jika tidak ketemu, coba search dengan keyword
+                console.log('🔍 Searching untuk region: ' + region);
+                for (var key in window.floodData) {
+                    if (key.toLowerCase().indexOf(region.toLowerCase()) > -1) {
+                        console.log('✓ Found data via search: ' + key);
+                        return window.floodData[key];
+                    }
+                }
+                
+                return null;
+            }
+            
+            // Cek di floodData (data lengkap dari isidata.js)
+            var fullData = findFloodData(region);
+            if (!fullData) {
+                console.error('❌ Data tidak ditemukan untuk: ' + region);
+                console.log('Available regions:', Object.keys(window.floodData));
                 return;
             }
             
-            var regionData = disasterData[region];
-            var rgbColor = regionData.color;
+            var rgbColor = fullData.color || "rgba(100,100,100,1.0)";
             
-            // Build popup HTML
-            var popupHTML = '<div style="background: ' + rgbColor + '; padding: 15px; border-radius: 8px; color: white; max-width: 350px;">';
-            popupHTML += '<h3 style="margin-top: 0; margin-bottom: 12px; font-size: 1.2rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">' + region + '</h3>';
-            popupHTML += '<div style="background: rgba(255,255,255,0.95); color: #333; padding: 10px; border-radius: 5px;">';
+            // Helper function untuk mendapatkan emoji risiko
+            function getRiskEmoji(risk) {
+                switch (risk.toLowerCase()) {
+                    case "sangat tinggi": return "🚨";
+                    case "tinggi": return "⚠️";
+                    case "sedang": return "⚡";
+                    case "rendah": return "✅";
+                    default: return "ℹ️";
+                }
+            }
             
-            if (regionData.disasters && regionData.disasters.length > 0) {
-                regionData.disasters.forEach(function(disaster) {
-                    popupHTML += '<div style="margin-bottom: 12px; border-left: 3px solid ' + rgbColor + '; padding-left: 10px;">';
-                    popupHTML += '<strong style="color: #1a2a6c;">' + disaster.type + '</strong><br>';
-                    popupHTML += '<span style="font-size: 0.9rem; color: #666;">Risiko: <strong>' + disaster.riskLevel + '</strong></span><br>';
-                    popupHTML += '<span style="font-size: 0.85rem; color: #555;">' + disaster.description + '</span>';
-                    popupHTML += '</div>';
+            // Build popup HTML dengan data lengkap
+            var popupHTML = '<div style="background: ' + rgbColor + '; padding: 12px; border-radius: 8px; color: white; max-width: 450px; font-family: Arial, sans-serif;">';
+            
+            // Header
+            popupHTML += '<h3 style="margin-top: 0; margin-bottom: 8px; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">' + region + '</h3>';
+            
+            // Konten detail
+            popupHTML += '<div style="background: rgba(255,255,255,0.95); color: #333; padding: 12px; border-radius: 5px; font-size: 0.9rem;">';
+            
+            // Tingkat Risiko dengan emoji
+            if (fullData.tingkatRisiko) {
+                popupHTML += '<div style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #ddd;">';
+                popupHTML += '<strong>' + getRiskEmoji(fullData.tingkatRisiko) + ' Tingkat Risiko:</strong> ' + fullData.tingkatRisiko + '<br>';
+                popupHTML += '</div>';
+            }
+            
+            // Frekuensi Banjir
+            if (fullData.frekuensiBanjir) {
+                popupHTML += '<div style="margin-bottom: 8px;"><strong>📊 Frekuensi Banjir:</strong> ' + fullData.frekuensiBanjir + '</div>';
+            }
+            
+            // Wilayah Terdampak
+            if (fullData.wilayahTerdampak) {
+                popupHTML += '<div style="margin-bottom: 8px;"><strong>📍 Wilayah Terdampak:</strong> ' + fullData.wilayahTerdampak + '</div>';
+            }
+            
+            // Korban
+            if (fullData.korban && fullData.korban.length > 0) {
+                popupHTML += '<div style="margin-bottom: 8px;"><strong>👥 Korban:</strong><br>';
+                fullData.korban.forEach(function(item) {
+                    popupHTML += '• ' + item + '<br>';
                 });
-            } else {
-                popupHTML += '<p>Tidak ada data bencana.</p>';
+                popupHTML += '</div>';
+            }
+            
+            // Rumah Rusak
+            if (fullData.rumahRusak && fullData.rumahRusak.length > 0) {
+                popupHTML += '<div style="margin-bottom: 8px;"><strong>🏠 Rumah Rusak:</strong><br>';
+                fullData.rumahRusak.forEach(function(item) {
+                    popupHTML += '• ' + item + '<br>';
+                });
+                popupHTML += '</div>';
+            }
+            
+            // Deskripsi
+            if (fullData.deskripsi) {
+                popupHTML += '<div style="margin-bottom: 8px; padding-top: 8px; border-top: 1px solid #ddd;"><strong>📝 Deskripsi:</strong><br>' + fullData.deskripsi + '</div>';
+            }
+            
+            // Mitigasi
+            if (fullData.mitigasi) {
+                popupHTML += '<div style="margin-bottom: 8px; padding-top: 8px; border-top: 1px solid #ddd;"><strong>🛡️ Mitigasi:</strong><br>' + fullData.mitigasi + '</div>';
+            }
+            
+            // Image jika ada
+            if (fullData.imageUrl) {
+                popupHTML += '<div style="margin-top: 10px; text-align: center;"><img src="' + fullData.imageUrl + '" style="max-width: 100%; height: auto; border-radius: 5px; max-height: 200px;"></div>';
             }
             
             popupHTML += '</div></div>';
@@ -802,8 +808,9 @@
             // Create and open popup at center of region
             var popup = L.popup({
                 closeButton: true,
-                maxWidth: 400,
-                className: 'disaster-popup'
+                maxWidth: 500,
+                className: 'disaster-popup',
+                autoPan: true
             }).setContent(popupHTML);
             
             // Find region layer and get center
