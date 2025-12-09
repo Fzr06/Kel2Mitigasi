@@ -38,27 +38,27 @@ window.floodData = {
     imageUrl : "img/bangai_laut.jpeg"
   },
   Buol: {
-    tingkatRisiko: "Rendah",
-    frekuensiBanjir: "2-8 kali per 3 tahun",
-    wilayahTerdampak: "Buol Kota, Momunu",
-    korban: ["Korban Jiwa: 1", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 16.603"],
-    rumahRusak: ["Rumah Rusak Berat: 8 Rumah", "Rumah Rusak Sedang: 7 Rumah", "Rumah Rusak Ringan: 7 Rumah"],
+    tingkatRisiko: "Tinggi",
+    frekuensiBanjir: "6-10 kali per 3 tahun",
+    wilayahTerdampak: "Biau, Momunu, Lakea",
+    korban: ["Korban Jiwa: 1", "Korban Luka-luka: 2", "Korban Mengungsi: 3.100"],
+    rumahRusak: ["Rumah Rusak Berat: 15 Rumah", "Rumah Rusak Sedang: 20 Rumah", "Rumah Rusak Ringan: 250 Rumah"],
     deskripsi:
-      "Area pesisir dengan topografi berbukit. Banjir lokal terjadi di beberapa titik rendah saat hujan ekstrem.",
-    mitigasi: "Pembangunan drainase, reboisasi, pemantauan curah hujan",
+      "Banjir kiriman dari hulu akibat kerusakan hutan dan alih fungsi lahan perkebunan sawit, menyebabkan sungai Buol meluap ke pusat pemerintahan dan pemukiman.",
+    mitigasi: "Restorasi ekosistem hutan hulu, pembangunan tanggul sungai, normalisasi sungai Buol.",
     imageUrl : "img/buol.jpg"
   },
   Donggala: {
-    tingkatRisiko: "Tinggi",
-    frekuensiBanjir: "5-7 kali per 3 tahun",
-    wilayahTerdampak: "Banawa, Donggala Kota, Sirenja",
-    korban: ["Korban Jiwa: Tidak ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 5.362"],
-    rumahRusak: ["Rumah Rusak Berat: 7 Rumah", "Rumah Rusak Sedang: 5 Rumah", "Rumah Rusak Ringan: 1 Rumah"],
+    tingkatRisiko: "Sedang - Tinggi",
+    frekuensiBanjir: "6-10 kali per 3 tahun",
+    wilayahTerdampak: "Dampelas, Sojol, Banawa Selatan",
+    korban: ["Korban Jiwa: 2", "Korban Luka-luka: 8", "Korban Mengungsi: 3.200"],
+    rumahRusak: ["Rumah Rusak Berat: 15 Rumah", "Rumah Rusak Sedang: 30 Rumah", "Rumah Rusak Ringan: 150 Rumah"],
     imageUrl: "img/donggala.jpg",
     deskripsi:
-      "Wilayah pesisir dan dataran rendah sangat rawan banjir. Infrastruktur drainase terbatas dan sungai-sungai sering meluap saat musim hujan.",
+      "Banjir sering terjadi di wilayah pesisir dan muara sungai. Akses jalan trans Sulawesi sering terputus akibat luapan air sungai saat hujan deras.",
     mitigasi:
-      "Pembangunan tanggul, normalisasi 5 sungai utama, sistem pompa air, early warning"
+      "Peninggian badan jalan, normalisasi muara sungai, penanaman mangrove di pesisir"
   },
   "Kota Palu": {
     color: "rgba(46,93,141,1.0)",
@@ -126,26 +126,27 @@ window.floodData = {
   Sigi: {
     color: "rgba(164,100,73,1.0)",
     tingkatRisiko: "Sangat Tinggi",
-    frekuensiBanjir: "8-11 kali per 3 tahun",
-    wilayahTerdampak: "Sigi Biromaru, Palolo, Dolo",
-    korban: ["Korban Jiwa: 3 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 4.146"],
-    rumahRusak: ["Rumah Rusak Berat: 25 Rumah", "Rumah Rusak Sedang: 35 Rumah", "Rumah Rusak Ringan: 206 Rumah"],
+    frekuensiBanjir: "10-12 kali per 3 tahun",
+    wilayahTerdampak: "Kulawi, Gumbasa, Dolo Selatan",
+    korban: ["Korban Jiwa: 5 Orang", "Korban Luka-luka: 12", "Korban Mengungsi: 5.400"],
+    rumahRusak: ["Rumah Rusak Berat: 65 Rumah", "Rumah Rusak Sedang: 110 Rumah", "Rumah Rusak Ringan: 230 Rumah"],
     deskripsi:
-      "Wilayah lembah dengan intensitas curah hujan sangat tinggi. Sungai Gumbasa dan Lariang sering meluap menggenangi pemukiman dan lahan pertanian.",
+      "Rawan banjir bandang (flash flood) yang membawa material lumpur dan kayu akibat kondisi hulu sungai yang labil pasca gempa dan curah hujan ekstrem di pegunungan.",
     mitigasi:
-      "Waduk Gumbasa (15 juta m³), tanggul pengaman 3 km, 8 pos pemantauan, jalur evakuasi",
+      "Pembangunan Sabo Dam, reboisasi hulu sungai, sistem peringatan dini (EWS) banjir bandang.",
     imageUrl: "img/kab_sigi.jpg"
   },
   "Tojo Una Una": {
     color: "rgba(45,107,133,1.0)",
-    tingkatRisiko: "Rendah",
-    frekuensiBanjir: "1-5 kali per 3 tahun",
-    wilayahTerdampak: "Ampana, Una-Una, Togean",
-    korban: ["Korban Jiwa: 1 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 335 Orang"],
-    rumahRusak: ["Rumah Rusak Berat: 6 Rumah", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
+    tingkatRisiko: "Sedang",
+    frekuensiBanjir: "5-9 kali per 3 tahun",
+    wilayahTerdampak: "Ampana Kota, Ulubongka, Ratolindo",
+    korban: ["Korban Jiwa: 0 Orang", "Korban Luka-luka: 1", "Korban Mengungsi: 1.200 Orang"],
+    rumahRusak: ["Rumah Rusak Berat: 5 Rumah", "Rumah Rusak Sedang: 10", "Rumah Rusak Ringan: 90"],
     deskripsi:
-      "Area dengan topografi relatif aman. Banjir lokal terjadi pada beberapa titik dekat aliran sungai kecil dan wilayah pesisir saat pasang tinggi.",
-    mitigasi: "Drainase alami, pemeliharaan DAS, sistem informasi cuaca",
+      "Banjir bandang skala kecil sering terjadi di wilayah yang dialiri sungai-sungai pendek namun curam dari pegunungan.
+",
+    mitigasi: "Bronjong penahan tebing, pembersihan rutin sedimen sungai, sosialisasi bahaya banjir bandang.",
     imageUrl : "img/banjir_tojo_una_una.jpg"
   },
   "Toli Toli": {
