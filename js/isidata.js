@@ -107,20 +107,20 @@ window.floodData = {
     deskripsi:
       "Area pertanian dengan sistem irigasi yang perlu perbaikan. Berpotensi banjir saat hujan lebat berkepanjangan dan luapan sungai-sungai di DAS Parigi.",
     mitigasi:
-      "Perbaikan sistem irigasi, waduk penampung, pos curah hujan otomatis",
+      "Perbaikan dan normalisasi sistem irigasi, terutama pada area pertanian yang sering tergenang dan di sepanjang DAS Parigi yang mengalami pendangkalan.",
     imageUrl : "img/parigi_moutong.jpeg"
   },
   Poso: {
     color: "rgba(34,136,95,1.0)",
-    tingkatRisiko: "Sedang",
-    frekuensiBanjir: "8-18 kali per 3 tahun",
-    wilayahTerdampak: "Poso Kota, Lage, Pamona",
-    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 5.534"],
-    rumahRusak: ["Rumah Rusak Berat: 3 Rumah", "Rumah Rusak Sedang: 4 Rumah", "Rumah Rusak Ringan: 150 Rumah"],
+    tingkatRisiko: "Sedang - Tinggi",
+    frekuensiBanjir: "7-12 kali per 3 tahun",
+    wilayahTerdampak: "Poso Kota, Poso Pesisir, Lore Utara, Lage, Pamona",
+    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: 4 Orang", "Korban Mengungsi: 2.500"],
+    rumahRusak: ["Rumah Rusak Berat: 12 Rumah", "Rumah Rusak Sedang: 25   Rumah", "Rumah Rusak Ringan: 180 Rumah"],
     deskripsi:
-      "Wilayah sekitar Danau Poso dengan potensi luapan danau dan sungai. Topografi berbukit dengan beberapa area dataran rendah rawan genangan.",
+      "Luapan Sungai Poso dan anak sungainya. Wilayah dataran rendah di sekitar Danau Poso juga memiliki risiko genangan saat musim hujan berkepanjangan.",
     mitigasi:
-      "Sistem pemantauan ketinggian Danau Poso, normalisasi outlet danau, early warning SMS",
+      "Pemeliharaan bendung irigasi, penghijauan daerah tangkapan air (catchment area), tata kelola pintu air Danau Poso.",
     imageUrl : "img/poso.jpeg"
   },
   Sigi: {
@@ -144,22 +144,22 @@ window.floodData = {
     korban: ["Korban Jiwa: 0 Orang", "Korban Luka-luka: 1", "Korban Mengungsi: 1.200 Orang"],
     rumahRusak: ["Rumah Rusak Berat: 5 Rumah", "Rumah Rusak Sedang: 10", "Rumah Rusak Ringan: 90"],
     deskripsi:
-      "Banjir bandang skala kecil sering terjadi di wilayah yang dialiri sungai-sungai pendek namun curam dari pegunungan.
-",
-    mitigasi: "Bronjong penahan tebing, pembersihan rutin sedimen sungai, sosialisasi bahaya banjir bandang.",
+      "Banjir bandang skala kecil sering terjadi di wilayah yang dialiri sungai-sungai pendek namun curam dari pegunungan.",
+    mitigasi: 
+      "Bronjong penahan tebing, pembersihan rutin sedimen sungai, sosialisasi bahaya banjir bandang.",
     imageUrl : "img/banjir_tojo_una_una.jpg"
   },
   "Toli Toli": {
     color: "rgba(56,64,154,1.0)",
-    tingkatRisiko: "Sedang",
-    frekuensiBanjir: "2-10 kali per 3 tahun",
-    wilayahTerdampak: "Tolitoli Kota, Baolan, Galang",
-    korban: ["Korban Jiwa: TidaK Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 13.640"],
-    rumahRusak: ["Rumah Rusak Berat: 15 Rumah", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: 17 Rumah"],
+    tingkatRisiko: "Sangat Tinggi",
+    frekuensiBanjir: "12-18 kali per 3 tahun",
+    wilayahTerdampak: "Tolitoli Kota, Baolan, Galang, Lampasio",
+    korban: ["Korban Jiwa: 3 Orang", "Korban Luka-luka: 10 Orang", "Korban Mengungsi: 8.000"],
+    rumahRusak: ["Rumah Rusak Berat: 40 Rumah", "Rumah Rusak Sedang: 85 Rumah", "Rumah Rusak Ringan: 1.200 Rumah"],
     deskripsi:
-      "Wilayah pesisir utara dengan dataran rendah rawan genangan saat intensitas hujan tinggi dan pasang laut. Kombinasi banjir sungai dan rob memperbesar dampak.",
+      "Memiliki topografi cekungan yang menerima aliran air dari pegunungan sekitarnya. Sangat rentan banjir besar jika terjadi hujan ekstrem dengan durasi lama.",
     mitigasi:
-      "Tanggul pesisir, pompa air 50 m³/menit, normalisasi sungai, early warning",
+      "Kanalisasi pengendali banjir, normalisasi sungai Tuweley dan Lempe, relokasi hunian bantaran sungai.",
     imageUrl : "img/toli-toli.jpg"
   },
 };
