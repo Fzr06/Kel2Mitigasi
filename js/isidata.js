@@ -1,40 +1,40 @@
 // Data informasi banjir untuk setiap kabupaten/kota di Sulawesi Tengah
 // Langsung di-assign ke window.floodData agar bisa diakses global
 window.floodData = {
-  Banggai: {
+ Banggai: {
     color: "rgba(57,94,240,1.0)",
-    tingkatRisiko: "Sedang",
-    frekuensiBanjir: "1-18 kali per 3 tahun",
-    wilayahTerdampak: "Luwuk, Batui, Banggai Utara",
-    korban: ["Korban Jiwa: 1 Orang", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 3.631 Orang"],
-    rumahRusak: ["Rumah Rusak Berat: 52 Rumah", "Rumah Rusak Sedang: 54 Rumah", "Rumah Rusak Ringan: 141 Rumah"],
+    tingkatRisiko: "sedang-tinggi",
+    frekuensiBanjir: "8-15 kali per 3 tahun",
+    wilayahTerdampak: "Luwuk, Luwuk Timur, Luwuk Selatan, Toili, Batui, Bunta",
+    korban: ["Korban Jiwa: 5 Orang", "Korban Luka-luka: 0-3 orang", "Korban Mengungsi: 6.500 Orang","warga terdampak: 12.000 jiwa"]
+    rumahRusak: ["Rumah Rusak Berat: 35 Rumah", "Rumah Rusak Sedang: 52 Rumah", "Rumah Rusak Ringan: 145 Rumah", "rumah terendam: 980"],
     deskripsi:
-      "Banjir sering terjadi di kawasan pesisir dan dataran rendah, terutama saat musim hujan panjang dan pasang laut tinggi.",
-    mitigasi: "Normalisasi sungai, pembuatan tanggul, early warning system",
+      "Banjir dipicu curah hujan tinggi, luapan sungai, penyempitan alur sungai, serta sistem drainase yang kurang memadai di wilayah permukiman dan pertanian.",
+    mitigasi: "Normalisasi sungai, pembangunan tanggul, waduk penampung, drainase terpadu, dan pemasangan alat pemantau tinggi muka air.",
     imageUrl : "img/bangai.jpg"
   },
   "Banggai Kepulauan": {
     color: "rgba(217,112,71,1.0)",
-    tingkatRisiko: "Rendah",
-    frekuensiBanjir: "1-8 kali per 3 tahun",
-    wilayahTerdampak: "Salakan, Labobo",
-    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 191"],
-    rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
+    tingkatRisiko: "sedang",
+    frekuensiBanjir: "4-9 kali per 3 tahun",
+    wilayahTerdampak: "Tinangkung, Tinangkung Selatan, Tinangkung Utara, Totikum, Totikum Selatan, Buko",
+    korban: ["Korban Jiwa: 2 orang", "Korban Luka-luka: 0-2 orang", "Korban Mengungsi: 2.100 jiwa","warga terdampak: 4.500 jiwa"],
+    rumahRusak: ["Rumah Rusak Berat: 18 rumah", "Rumah Rusak Sedang: 27 rumah", "Rumah Rusak Ringan: 73 rumah","rumah terendam: 510 rumah"],
     deskripsi:
-      "Banjir rob dan pasang laut tinggi sesekali menggenangi wilayah pesisir. Risiko banjir bandang sangat rendah karena topografi kepulauan.",
-    mitigasi: "Tanaman mangrove, peninggian jalan pesisir, sistem drainase",
+      "Banjir terjadi akibat hujan intensitas tinggi, luapan sungai kecil, dan keterbatasan drainase di wilayah pesisir dan dataran rendah.",
+    mitigasi: "Normalisasi aliran sungai kecil, perbaikan drainase, pembangunan tanggul pesisir, kolam retensi, dan sistem peringatan dini banjir.",
     imageUrl : "img/bangai_kepulauan.jpg"
   },
-  "Banggai Laut": {
+ "Banggai Laut": {
     color: "rgba(180,100,150,1.0)",
-    tingkatRisiko: "Rendah",
-    frekuensiBanjir: "0-3 kali per 3 tahun",
-    wilayahTerdampak: "Banggai, Tinangkung",
-    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 4"],
+    tingkatRisiko: "sedang",
+    frekuensiBanjir: "4-8 kali per 3 tahun",
+    wilayahTerdampak: "Kec. Banggai, Banggai Selatan, Banggai Tengah",
+    korban: ["Korban Jiwa: Tidak Ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 68 jiwa","warga terdampak: 322 kk"],
     rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
     deskripsi:
       "Wilayah kepulauan dengan ancaman terbatas. Lebih rentan terhadap abrasi dan banjir rob daripada banjir sungai.",
-    mitigasi: "Pemecah ombak, penanaman mangrove, sistem drainase pesisir",
+    mitigasi: "Normalisasi sungai, perbaikan drainase, pembangunan kolam retensi, pemasangan alat pemantau curah hujan.",
     imageUrl : "img/bangai_laut.jpeg"
   },
   Buol: {
