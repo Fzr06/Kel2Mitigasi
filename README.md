@@ -1,5 +1,13 @@
 # Mitigasi-Kelompok-2--Peta-interaktif-Banjir
 
+Kelompok 2
+Anggota
+1.Moh.Fauzi Ramadhan_F52124052
+2.Marchelinda Bin_F52124059
+3.Muh.Dawai_F52124073
+4.Filtatra_F52124072
+5.Ifdal M Wajib_F52124052
+
 Struktur Folder
 css: Mengatur tampilan visual (layout & gaya).
 js: Pusat logika dan interaksi aplikasi. Fokus pada efisiensi kode, penanganan error (error handling) saat memuat data, serta penggunaan struktur modular agar mudah dikelola.
