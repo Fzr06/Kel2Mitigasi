@@ -65,7 +65,7 @@ window.floodData = {
     tingkatRisiko: "Sangat Tinggi",
     frekuensiBanjir: "3-5 kali per 3 tahun",
     wilayahTerdampak: "Palu Barat, Palu Timur, Palu Utara, Tatanga, Tawaeli",
-    korban: ["Korban Jiwa: Tidak ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 6.194"],
+    korban: ["Korban Jiwa: Tidak ada", "Korban Luka-luka: Tidak Ada", "Korban Mengungsi: 7.500"],
     rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
     imageUrl: "img/palu.jpg",
     deskripsi:
