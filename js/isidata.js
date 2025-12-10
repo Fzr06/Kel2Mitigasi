@@ -1,12 +1,12 @@
 // Data informasi banjir untuk setiap kabupaten/kota di Sulawesi Tengah
 // Langsung di-assign ke window.floodData agar bisa diakses global
 window.floodData = {
- Banggai: {
+ "Banggai": {
     color: "rgba(57,94,240,1.0)",
     tingkatRisiko: "sedang-tinggi",
     frekuensiBanjir: "8-15 kali per 3 tahun",
     wilayahTerdampak: "Luwuk, Luwuk Timur, Luwuk Selatan, Toili, Batui, Bunta",
-    korban: ["Korban Jiwa: 5 Orang", "Korban Luka-luka: 0-3 orang", "Korban Mengungsi: 6.500 Orang","warga terdampak: 12.000 jiwa"]
+    korban: ["Korban Jiwa: 5 Orang", "Korban Luka-luka: 0-3 orang", "Korban Mengungsi: 6.500 Orang","warga terdampak: 12.000 jiwa"],
     rumahRusak: ["Rumah Rusak Berat: 35 Rumah", "Rumah Rusak Sedang: 52 Rumah", "Rumah Rusak Ringan: 145 Rumah", "rumah terendam: 980"],
     deskripsi:
       "Banjir dipicu curah hujan tinggi, luapan sungai, penyempitan alur sungai, serta sistem drainase yang kurang memadai di wilayah permukiman dan pertanian.",
@@ -37,7 +37,7 @@ window.floodData = {
     mitigasi: "Normalisasi sungai, perbaikan drainase, pembangunan kolam retensi, pemasangan alat pemantau curah hujan.",
     imageUrl : "img/bangai_laut.jpeg"
   },
-  Buol: {
+  "Buol": {
     tingkatRisiko: "Tinggi",
     frekuensiBanjir: "6-10 kali per 3 tahun",
     wilayahTerdampak: "Biau, Momunu, Lakea",
@@ -48,7 +48,7 @@ window.floodData = {
     mitigasi: "Restorasi ekosistem hutan hulu, pembangunan tanggul sungai, normalisasi sungai Buol.",
     imageUrl : "img/buol.jpg"
   },
-  Donggala: {
+  "Donggala": {
     tingkatRisiko: "Sedang - Tinggi",
     frekuensiBanjir: "6-10 kali per 3 tahun",
     wilayahTerdampak: "Dampelas, Sojol, Banawa Selatan",
@@ -73,7 +73,7 @@ window.floodData = {
     mitigasi:
       "Tanggul Sungai Palu 2.5 km, pompa air otomatis, 10 pos pemantauan, sistem peringatan dini SMS, normalisasi anak sungai"
   },
-  Morowali: {
+  "Morowali": {
     tingkatRisiko: "Sedang",
     frekuensiBanjir: "1-8 kali per 3 tahun",
     wilayahTerdampak: "Bungku, Bahodopi, Petasia",
@@ -110,7 +110,7 @@ window.floodData = {
       "Perbaikan dan normalisasi sistem irigasi, terutama pada area pertanian yang sering tergenang dan di sepanjang DAS Parigi yang mengalami pendangkalan.",
     imageUrl : "img/parigi_moutong.jpeg"
   },
-  Poso: {
+  "Poso": {
     color: "rgba(34,136,95,1.0)",
     tingkatRisiko: "Sedang - Tinggi",
     frekuensiBanjir: "7-12 kali per 3 tahun",
@@ -123,7 +123,7 @@ window.floodData = {
       "Pemeliharaan bendung irigasi, penghijauan daerah tangkapan air (catchment area), tata kelola pintu air Danau Poso.",
     imageUrl : "img/poso.jpeg"
   },
-  Sigi: {
+  "Sigi": {
     color: "rgba(164,100,73,1.0)",
     tingkatRisiko: "Sangat Tinggi",
     frekuensiBanjir: "10-12 kali per 3 tahun",
