@@ -208,6 +208,42 @@
                 font-size: 1.5rem;
             }
         }
+        
+        /* Styling untuk Leaflet Popup dengan data banjir */
+        .leaflet-popup-content {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .popup-bar {
+            width: 100%;
+            height: 5px;
+            margin: 0 !important;
+            padding: 0 !important;
+            display: block;
+        }
+        
+        .popup-content-wrapper {
+            padding: 12px !important;
+        }
+        
+        .leaflet-popup-content h3 {
+            margin-top: 0 !important;
+        }
+        
+        .leaflet-popup-content strong {
+            color: #1976d2;
+        }
+        
+        .leaflet-popup-content ul {
+            margin: 5px 0 !important;
+            padding-left: 20px !important;
+        }
+        
+        .leaflet-popup-content li {
+            font-size: 13px;
+            margin: 3px 0;
+        }
         </style>
         <title>Peta Interaktif Bencana Banjir Sulawesi Tengah</title>
     </head>
@@ -251,7 +287,7 @@
         // Converter: ubah format floodData dari isidata.js ke disasterData format
         var disasterData = {};
         if (window.floodData) {
-            console.log('📊 Data floodData tersedia, jumlah kabupaten:', Object.keys(window.floodData).length);
+            console.log('Data floodData tersedia, jumlah kabupaten:', Object.keys(window.floodData).length);
             for (const region in window.floodData) {
                 const regionData = window.floodData[region];
                 const color = regionData.color || "rgba(100,100,100,1.0)";
@@ -267,10 +303,10 @@
                     ]
                 };
             }
-            console.log('✓ Data disasterData berhasil dibuat, jumlah:', Object.keys(disasterData).length);
+            console.log('Data disasterData berhasil dibuat, jumlah:', Object.keys(disasterData).length);
             console.log('Daftar kabupaten:', Object.keys(disasterData));
         } else {
-            console.error('❌ window.floodData tidak ditemukan!');
+            console.error('window.floodData tidak ditemukan!');
         }
 
         // Fungsi untuk membuat efek partikel
@@ -397,55 +433,157 @@
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
         function pop_SulawesiTengahgadm36_idn_shp__gadm36_idn_2shp_1(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['GID_0'] !== null ? autolinker.link(String(feature.properties['GID_0']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NAME_0'] !== null ? autolinker.link(String(feature.properties['NAME_0']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['GID_1'] !== null ? autolinker.link(String(feature.properties['GID_1']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NAME_1'] !== null ? autolinker.link(String(feature.properties['NAME_1']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NL_NAME_1'] !== null ? autolinker.link(String(feature.properties['NL_NAME_1']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['GID_2'] !== null ? autolinker.link(String(feature.properties['GID_2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NAME_2'] !== null ? autolinker.link(String(feature.properties['NAME_2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['VARNAME_2'] !== null ? autolinker.link(String(feature.properties['VARNAME_2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NL_NAME_2'] !== null ? autolinker.link(String(feature.properties['NL_NAME_2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['TYPE_2'] !== null ? autolinker.link(String(feature.properties['TYPE_2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ENGTYPE_2'] !== null ? autolinker.link(String(feature.properties['ENGTYPE_2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['CC_2'] !== null ? autolinker.link(String(feature.properties['CC_2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['HASC_2'] !== null ? autolinker.link(String(feature.properties['HASC_2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
+            var regionName = feature.properties['NAME_2'];
+            
+            // Debug: log informasi
+            console.log('Pop-up clicked for region:', regionName);
+            console.log('window.floodData available:', !!window.floodData);
+            if (window.floodData) {
+                console.log('Available keys in floodData:', Object.keys(window.floodData));
+            }
+            
+            // Mapping nama kabupaten dari GeoJSON ke isidata.js
+            var nameMapping = {
+                'Palu': 'Kota Palu',
+                'Tojo Una-Una': 'Tojo Una Una',
+                'Toli-Toli': 'Toli Toli'
+            };
+            
+            // Gunakan nama mapping jika ada, jika tidak gunakan nama asli
+            var dataKey = nameMapping[regionName] || regionName;
+            var floodDataItem = window.floodData && window.floodData[dataKey];
+            
+            console.log('Looking for key:', dataKey);
+            console.log('Found data:', !!floodDataItem);
+            
+            // Fungsi untuk menentukan warna bar berdasarkan tingkat risiko
+            function getBarColor(riskLevel) {
+                if (!riskLevel) return '#e0e0e0'; // default gray
+                
+                var risk = riskLevel.toLowerCase();
+                
+                // Cek untuk "sangat tinggi"
+                if (risk.includes('sangat') && risk.includes('tinggi')) {
+                    return '#d32f2f'; // Red untuk Sangat Tinggi
+                }
+                // Cek untuk "tinggi"
+                if (risk.includes('tinggi')) {
+                    return '#f57c00'; // Orange untuk Tinggi
+                }
+                // Cek untuk "sedang"
+                if (risk.includes('sedang')) {
+                    return '#fbc02d'; // Yellow untuk Sedang
+                }
+                // Cek untuk "rendah"
+                if (risk.includes('rendah')) {
+                    return '#388e3c'; // Green untuk Rendah
+                }
+                
+                return '#e0e0e0'; // Default gray
+            }
+            
+            // Jika data banjir ditemukan, tampilkan data dari isidata.js
+            if (floodDataItem) {
+                // Tentukan warna bar berdasarkan tingkat risiko
+                var barColor = getBarColor(floodDataItem.tingkatRisiko);
+                console.log('Tingkat Risiko:', floodDataItem.tingkatRisiko, 'Bar Color:', barColor);
+                
+                // Buat popup dengan struktur HTML sederhana
+                var popupContent = '<div style="width: 320px; font-family: Arial, sans-serif;">';
+                popupContent += '<div style="height: 6px; background-color: ' + barColor + '; margin: -8px -8px 12px -8px;"></div>';
+                popupContent += '<h3 style="color: #2e8b57; margin: 0 0 8px 0; font-size: 16px;">' + regionName + '</h3>';
+                
+                // Tingkat Risiko
+                if (floodDataItem.tingkatRisiko) {
+                    popupContent += '<p style="margin: 0 0 6px 0; font-size: 13px;"><strong>Tingkat Risiko:</strong> <span style="color: ' + barColor + '; font-weight: bold;">' + floodDataItem.tingkatRisiko + '</span></p>';
+                }
+                
+                // Frekuensi Banjir
+                if (floodDataItem.frekuensiBanjir) {
+                    popupContent += '<p style="margin: 0 0 6px 0; font-size: 13px;"><strong>Frekuensi Banjir:</strong> ' + floodDataItem.frekuensiBanjir + '</p>';
+                }
+                
+                // Wilayah Terdampak
+                if (floodDataItem.wilayahTerdampak) {
+                    popupContent += '<p style="margin: 0 0 6px 0; font-size: 13px;"><strong>Wilayah Terdampak:</strong> ' + floodDataItem.wilayahTerdampak + '</p>';
+                }
+                
+                // Korban
+                if (floodDataItem.korban && floodDataItem.korban.length > 0) {
+                    popupContent += '<p style="margin: 0 0 6px 0; font-size: 13px;"><strong>Korban:</strong></p><ul style="margin: 0 0 6px 0; padding-left: 20px; font-size: 12px;">';
+                    floodDataItem.korban.forEach(function(item) {
+                        popupContent += '<li>' + item + '</li>';
+                    });
+                    popupContent += '</ul>';
+                }
+                
+                // Rumah Rusak
+                if (floodDataItem.rumahRusak && floodDataItem.rumahRusak.length > 0) {
+                    popupContent += '<p style="margin: 0 0 6px 0; font-size: 13px;"><strong>Rumah Rusak:</strong></p><ul style="margin: 0 0 6px 0; padding-left: 20px; font-size: 12px;">';
+                    floodDataItem.rumahRusak.forEach(function(item) {
+                        popupContent += '<li>' + item + '</li>';
+                    });
+                    popupContent += '</ul>';
+                }
+                
+                // Deskripsi
+                if (floodDataItem.deskripsi) {
+                    popupContent += '<p style="margin: 8px 0 6px 0; padding-top: 8px; border-top: 1px solid #e0e0e0; font-size: 12px;"><strong>Deskripsi:</strong><br/>' + floodDataItem.deskripsi + '</p>';
+                }
+                
+                // Mitigasi
+                if (floodDataItem.mitigasi) {
+                    popupContent += '<p style="margin: 8px 0 0 0; padding-top: 8px; border-top: 1px solid #e0e0e0; font-size: 12px;"><strong>Mitigasi:</strong><br/>' + floodDataItem.mitigasi + '</p>';
+                }
+                
+                popupContent += '</div>';
+                
+                layer.bindPopup(popupContent, { maxHeight: 500, maxWidth: 350 });
+            } else {
+                // Fallback: tampilkan data GeoJSON asli jika data banjir tidak ditemukan
+                var popupContent = '<table>\
+                        <tr>\
+                            <td colspan="2"><strong>' + regionName + '</strong></td>\
+                        </tr>\
+                        <tr>\
+                            <td>GID_0:</td>\
+                            <td>' + (feature.properties['GID_0'] !== null ? feature.properties['GID_0'] : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <td>NAME_0:</td>\
+                            <td>' + (feature.properties['NAME_0'] !== null ? feature.properties['NAME_0'] : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <td>GID_1:</td>\
+                            <td>' + (feature.properties['GID_1'] !== null ? feature.properties['GID_1'] : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <td>NAME_1:</td>\
+                            <td>' + (feature.properties['NAME_1'] !== null ? feature.properties['NAME_1'] : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <td>GID_2:</td>\
+                            <td>' + (feature.properties['GID_2'] !== null ? feature.properties['GID_2'] : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <td>TYPE_2:</td>\
+                            <td>' + (feature.properties['TYPE_2'] !== null ? feature.properties['TYPE_2'] : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <td>ENGTYPE_2:</td>\
+                            <td>' + (feature.properties['ENGTYPE_2'] !== null ? feature.properties['ENGTYPE_2'] : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <td>CC_2:</td>\
+                            <td>' + (feature.properties['CC_2'] !== null ? feature.properties['CC_2'] : '') + '</td>\
+                        </tr>\
+                        <tr>\
+                            <td>HASC_2:</td>\
+                            <td>' + (feature.properties['HASC_2'] !== null ? feature.properties['HASC_2'] : '') + '</td>\
+                        </tr>\
+                    </table>';
+                layer.bindPopup(popupContent, { maxHeight: 400 });
+            }
         }
 
         function style_SulawesiTengahgadm36_idn_shp__gadm36_idn_2shp_1_0(feature) {
