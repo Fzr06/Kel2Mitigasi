@@ -34,7 +34,7 @@ window.floodData = {
     rumahRusak: ["Rumah Rusak Berat: Tidak Ada", "Rumah Rusak Sedang: Tidak Ada", "Rumah Rusak Ringan: Tidak Ada"],
     deskripsi:
       "Wilayah kepulauan dengan ancaman terbatas. Lebih rentan terhadap abrasi dan banjir rob daripada banjir sungai.",
-    mitigasi: "Normalisasi sungai, perbaikan drainase, pembangunan kolam retensi, pemasangan alat pemantau curah hujan.",
+    mitigasi: "Normalisasi sungai, perbaikan drainase, pembangunan kolam retensi, serta pemasangan alat pemantau curah hujan.",
     imageUrl : "img/bangai_laut.jpeg"
   },
   "Buol": {
